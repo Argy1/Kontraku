@@ -109,9 +109,43 @@ Diatur lewat `.env`. Saat lokal semua pakai mode tiruan:
 | Push notif | `PUSH_BACKEND=log` | cetak ke terminal | `fcm` |
 | Email | `EMAIL_BACKEND=console` | cetak ke terminal; token reset juga dikembalikan di response | `smtp` |
 
+## Deploy ke Railway
+
+File yang dipakai: `Dockerfile`, `start.sh` (migrasi + uvicorn), `railway.json`,
+`.dockerignore`.
+
+**Langkah:**
+1. Railway → New Project → **Deploy from GitHub repo** → pilih `Argy1/Kontraku`.
+2. Di service yang dibuat → **Settings → Root Directory** = `backend`
+   (Railway otomatis pakai `backend/Dockerfile`).
+3. Tambah **Database → PostgreSQL** di project yang sama. Railway otomatis
+   membuat variabel `DATABASE_URL` — hubungkan ke service backend (Variables →
+   Reference → `Postgres.DATABASE_URL`).
+4. Set **Variables** di service backend:
+   | Variabel | Nilai |
+   |---|---|
+   | `ENVIRONMENT` | `production` |
+   | `SECRET_KEY` | string acak panjang (mis. `openssl rand -hex 32`) |
+   | `SCHEDULER_ENABLED` | `true` |
+   | `CORS_ORIGINS` | `*` (klien = mobile, tidak kena CORS) |
+   | `PUBLIC_BASE_URL` | URL publik Railway service (untuk link `/uploads/...`) |
+5. **Networking → Generate Domain** → dapat URL `https://xxx.up.railway.app`.
+6. `start.sh` menjalankan `alembic upgrade head` tiap deploy, jadi skema selalu
+   ikut ter-migrasi.
+
+**Setelah deploy:** cek `https://xxx.up.railway.app/health` dan `/docs`. Lalu di
+mobile, build ulang dengan `--dart-define=API_BASE_URL=https://xxx.up.railway.app`
+atau ubah di **Pengaturan server** dalam app.
+
+**Catatan penting:**
+- **Upload foto** (`STORAGE_BACKEND=local`) tersimpan di disk container yang
+  *ephemeral* — hilang tiap redeploy. Untuk sementara oke; solusi: tambah
+  **Railway Volume** di `/app/var`, atau pindah ke Cloudinary.
+- Scheduler jalan in-process. Biarkan `numReplicas: 1` (di `railway.json`) supaya
+  cron tidak jalan dobel.
+
 ## Catatan
 
-- Python 3.14 memunculkan `DeprecationWarning` dari dalam FastAPI (`asyncio.iscoroutinefunction`).
-  Tidak memengaruhi fungsi; hilang saat FastAPI update.
-- Belum ada: endpoint registrasi device token FCM, integrasi Google Maps
-  (dikerjakan di sisi Flutter), Dockerfile untuk deploy (menyusul di fase Railway).
+- Python 3.14 (dev) memunculkan `DeprecationWarning` dari dalam FastAPI. Image
+  Railway pakai Python 3.12 — tidak ada warning itu.
+- Belum ada: endpoint device token FCM, integrasi Google Maps (sisi Flutter).
