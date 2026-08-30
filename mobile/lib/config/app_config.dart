@@ -13,7 +13,10 @@ class AppConfig {
 
   static const String apiBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'http://localhost:8000',
+    // Default = backend produksi di Railway. Untuk dev lokal, jalankan dengan
+    // --dart-define=API_BASE_URL=http://<IP-PC>:8000, atau ubah di app
+    // (Pengaturan server).
+    defaultValue: 'https://backend-production-675a5.up.railway.app',
   );
 
   /// Nilai ini cuma jadi default AWAL. Pengguna bisa menimpanya dari layar
