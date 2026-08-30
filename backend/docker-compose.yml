@@ -1,0 +1,37 @@
+# Postgres untuk development lokal.
+# Jalankan dari folder backend/:  docker compose up -d
+# Matikan (data tetap aman):      docker compose down
+# Hapus TERMASUK data:            docker compose down -v
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: kontraku-db
+    environment:
+      POSTGRES_USER: kontraku
+      POSTGRES_PASSWORD: kontraku
+      POSTGRES_DB: kontraku
+    ports:
+      # host:container. Pakai 5433 di host supaya tidak bentrok dengan PostgreSQL
+      # lain yang mungkin sudah jalan di 5432 (mis. install native / Supabase lokal).
+      - "5433:5432"
+    volumes:
+      - kontraku_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kontraku -d kontraku"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # GUI ringan buat lihat isi database di http://localhost:8080
+  # (server: db, user: kontraku, password: kontraku, database: kontraku)
+  adminer:
+    image: adminer:5
+    container_name: kontraku-adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  kontraku_pgdata:

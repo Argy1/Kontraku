@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kontraku - Design reference</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; background:#f1efe8; padding:40px 20px; margin:0; }
+  .wrap { max-width:1100px; margin:0 auto; }
+  h1 { font-weight:600; }
+  .grid { display:flex; flex-wrap:wrap; gap:32px; }
+  .col { }
+  .label { font-size:14px; font-weight:600; color:#444441; margin-bottom:10px; }
+  .phone { width:320px; border:0.5px solid #e5e3da; border-radius:32px; overflow:hidden; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Kontraku - referensi desain</h1>
+<p>Palet: header/aksen teal #085041, reminder sewa amber #EF9F27, reminder kontrak coral #D85A30, kartu purple #3C3489 &amp; pink #72243E, status terisi hijau #27500A. Tema ikut sistem + toggle manual.</p>
+
+<div class="grid">
+
+<div class="col">
+<p class="label">1. Beranda (light)</p>
+<div class="phone" style="background:#ffffff">
+<div style="position:relative;background:#085041;padding:20px 18px 24px;overflow:hidden">
+  <svg width="130" height="130" style="position:absolute;top:-40px;right:-30px"><circle cx="65" cy="65" r="65" fill="#0F6E56"/></svg>
+  <svg width="70" height="70" style="position:absolute;bottom:-20px;right:60px"><circle cx="35" cy="35" r="35" fill="#1D9E75" opacity="0.5"/></svg>
+  <div style="position:relative;display:flex;justify-content:space-between;align-items:flex-start">
+    <div><p style="font-size:13px;color:#9FE1CB;margin:0">Selamat pagi</p><p style="font-size:23px;font-weight:600;color:#fff;margin:3px 0 0">Pak Budi</p></div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#FAC775;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:#412402">PB</div>
+  </div>
+  <div style="position:relative;display:flex;gap:10px;margin-top:20px">
+    <div style="flex:1;background:rgba(255,255,255,0.14);border-radius:16px;padding:12px">
+      <i class="ti ti-building" style="font-size:20px;color:#FAC775"></i>
+      <p style="font-size:22px;font-weight:600;color:#fff;margin:6px 0 0">3</p><p style="font-size:12px;color:#9FE1CB;margin:1px 0 0">Kontrakan</p>
+    </div>
+    <div style="flex:1;background:rgba(255,255,255,0.14);border-radius:16px;padding:12px">
+      <i class="ti ti-bell-ringing" style="font-size:20px;color:#F0997B"></i>
+      <p style="font-size:22px;font-weight:600;color:#fff;margin:6px 0 0">2</p><p style="font-size:12px;color:#9FE1CB;margin:1px 0 0">Reminder</p>
+    </div>
+  </div>
+</div>
+<div style="padding:18px 16px 0;background:#ffffff">
+<p style="font-size:16px;font-weight:600;color:#262622;margin:0 0 10px">Perlu perhatian</p>
+<div style="background:#fff;border:0.5px solid #f0e2c0;border-radius:4px 16px 16px 4px;padding:14px;margin-bottom:10px;display:flex;gap:12px;align-items:center;border-left:4px solid #EF9F27">
+  <div style="width:40px;height:40px;border-radius:12px;background:#FAEEDA;display:flex;align-items:center;justify-content:center"><i class="ti ti-cash" style="font-size:20px;color:#854F0B"></i></div>
+  <div><p style="font-size:15px;font-weight:600;color:#262622;margin:0">Sewa jatuh tempo</p><p style="font-size:13px;color:#6b6a63;margin:3px 0 0">Kamar 2, melati - 3 hari lagi</p></div>
+</div>
+<div style="background:#fff;border:0.5px solid #f2ddd3;border-radius:4px 16px 16px 4px;padding:14px;margin-bottom:20px;display:flex;gap:12px;align-items:center;border-left:4px solid #D85A30">
+  <div style="width:40px;height:40px;border-radius:12px;background:#FAECE7;display:flex;align-items:center;justify-content:center"><i class="ti ti-file-text" style="font-size:20px;color:#993C1D"></i></div>
+  <div><p style="font-size:15px;font-weight:600;color:#262622;margin:0">Kontrak akan habis</p><p style="font-size:13px;color:#6b6a63;margin:3px 0 0">Kamar 1, anggrek - 10 hari lagi</p></div>
+</div>
+<p style="font-size:16px;font-weight:600;color:#262622;margin:0 0 10px">Kontrakan saya</p>
+<div style="background:#fff;border:0.5px solid #e5e3da;border-radius:16px;padding:12px;margin-bottom:10px;display:flex;gap:12px;align-items:center">
+  <div style="width:54px;height:54px;border-radius:14px;background:#CECBF6;display:flex;align-items:center;justify-content:center"><i class="ti ti-home-2" style="font-size:24px;color:#3C3489"></i></div>
+  <div style="flex:1"><p style="font-size:16px;font-weight:600;color:#262622;margin:0">Kontrakan melati</p><p style="font-size:13px;color:#6b6a63;margin:3px 0 0">Jl. mawar no. 5</p></div>
+  <div style="background:#E1F5EE;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:600;color:#085041">4 unit</div>
+</div>
+<div style="background:#fff;border:0.5px solid #e5e3da;border-radius:16px;padding:12px;margin-bottom:16px;display:flex;gap:12px;align-items:center">
+  <div style="width:54px;height:54px;border-radius:14px;background:#F4C0D1;display:flex;align-items:center;justify-content:center"><i class="ti ti-home-2" style="font-size:24px;color:#72243E"></i></div>
+  <div style="flex:1"><p style="font-size:16px;font-weight:600;color:#262622;margin:0">Kontrakan anggrek</p><p style="font-size:13px;color:#6b6a63;margin:3px 0 0">Jl. kenanga no. 12</p></div>
+  <div style="background:#E1F5EE;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:600;color:#085041">3 unit</div>
+</div>
+</div>
+<div style="display:flex;justify-content:space-around;align-items:center;border-top:0.5px solid #e5e3da;padding:12px 0;background:#ffffff">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:3px;background:#E1F5EE;border-radius:14px;padding:5px 14px"><i class="ti ti-home" style="font-size:21px;color:#085041"></i><span style="font-size:11px;color:#085041;font-weight:600">Beranda</span></div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><i class="ti ti-building" style="font-size:21px;color:#a8a69c"></i><span style="font-size:11px;color:#a8a69c">Kontrakan</span></div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><i class="ti ti-bell" style="font-size:21px;color:#a8a69c"></i><span style="font-size:11px;color:#a8a69c">Reminder</span></div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><i class="ti ti-user" style="font-size:21px;color:#a8a69c"></i><span style="font-size:11px;color:#a8a69c">Profil</span></div>
+</div>
+</div>
+</div>
+
+<div class="col">
+<p class="label">2. Beranda (dark)</p>
+<div class="phone" style="background:#1c1c1a;border-color:#3a3a37">
+<div style="position:relative;background:#04342C;padding:20px 18px 24px;overflow:hidden">
+  <svg width="130" height="130" style="position:absolute;top:-40px;right:-30px"><circle cx="65" cy="65" r="65" fill="#085041"/></svg>
+  <svg width="70" height="70" style="position:absolute;bottom:-20px;right:60px"><circle cx="35" cy="35" r="35" fill="#0F6E56" opacity="0.5"/></svg>
+  <div style="position:relative;display:flex;justify-content:space-between;align-items:flex-start">
+    <div><p style="font-size:13px;color:#5DCAA5;margin:0">Selamat pagi</p><p style="font-size:23px;font-weight:600;color:#fff;margin:3px 0 0">Pak Budi</p></div>
+    <div style="width:42px;height:42px;border-radius:50%;background:#FAC775;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:#412402">PB</div>
+  </div>
+  <div style="position:relative;display:flex;gap:10px;margin-top:20px">
+    <div style="flex:1;background:rgba(255,255,255,0.08);border-radius:16px;padding:12px"><i class="ti ti-building" style="font-size:20px;color:#FAC775"></i><p style="font-size:22px;font-weight:600;color:#fff;margin:6px 0 0">3</p><p style="font-size:12px;color:#5DCAA5;margin:1px 0 0">Kontrakan</p></div>
+    <div style="flex:1;background:rgba(255,255,255,0.08);border-radius:16px;padding:12px"><i class="ti ti-bell-ringing" style="font-size:20px;color:#F0997B"></i><p style="font-size:22px;font-weight:600;color:#fff;margin:6px 0 0">2</p><p style="font-size:12px;color:#5DCAA5;margin:1px 0 0">Reminder</p></div>
+  </div>
+</div>
+<div style="padding:18px 16px 0">
+<p style="font-size:16px;font-weight:600;color:#f0efe9;margin:0 0 10px">Perlu perhatian</p>
+<div style="background:#3a2f18;border-radius:4px 16px 16px 4px;padding:14px;margin-bottom:10px;display:flex;gap:12px;align-items:center;border-left:4px solid #FAC775">
+  <div style="width:40px;height:40px;border-radius:12px;background:#2a2a27;display:flex;align-items:center;justify-content:center"><i class="ti ti-cash" style="font-size:20px;color:#FAC775"></i></div>
+  <div><p style="font-size:15px;font-weight:600;color:#fbe8c9;margin:0">Sewa jatuh tempo</p><p style="font-size:13px;color:#c9a768;margin:3px 0 0">Kamar 2, melati - 3 hari lagi</p></div>
+</div>
+<div style="background:#3a2620;border-radius:4px 16px 16px 4px;padding:14px;margin-bottom:20px;display:flex;gap:12px;align-items:center;border-left:4px solid #F0997B">
+  <div style="width:40px;height:40px;border-radius:12px;background:#2a2a27;display:flex;align-items:center;justify-content:center"><i class="ti ti-file-text" style="font-size:20px;color:#F0997B"></i></div>
+  <div><p style="font-size:15px;font-weight:600;color:#f6dcd2;margin:0">Kontrak akan habis</p><p style="font-size:13px;color:#d19274;margin:3px 0 0">Kamar 1, anggrek - 10 hari lagi</p></div>
+</div>
+<p style="font-size:16px;font-weight:600;color:#f0efe9;margin:0 0 10px">Kontrakan saya</p>
+<div style="background:#252523;border-radius:16px;padding:12px;margin-bottom:10px;display:flex;gap:12px;align-items:center">
+  <div style="width:54px;height:54px;border-radius:14px;background:#3C3489;display:flex;align-items:center;justify-content:center"><i class="ti ti-home-2" style="font-size:24px;color:#CECBF6"></i></div>
+  <div style="flex:1"><p style="font-size:16px;font-weight:600;color:#f0efe9;margin:0">Kontrakan melati</p><p style="font-size:13px;color:#9c9a92;margin:3px 0 0">Jl. mawar no. 5</p></div>
+  <div style="background:#0a2a22;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:600;color:#5DCAA5">4 unit</div>
+</div>
+<div style="background:#252523;border-radius:16px;padding:12px;margin-bottom:16px;display:flex;gap:12px;align-items:center">
+  <div style="width:54px;height:54px;border-radius:14px;background:#72243E;display:flex;align-items:center;justify-content:center"><i class="ti ti-home-2" style="font-size:24px;color:#F4C0D1"></i></div>
+  <div style="flex:1"><p style="font-size:16px;font-weight:600;color:#f0efe9;margin:0">Kontrakan anggrek</p><p style="font-size:13px;color:#9c9a92;margin:3px 0 0">Jl. kenanga no. 12</p></div>
+  <div style="background:#0a2a22;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:600;color:#5DCAA5">3 unit</div>
+</div>
+</div>
+<div style="display:flex;justify-content:space-around;align-items:center;border-top:0.5px solid #3a3a37;padding:12px 0">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:3px;background:#0a2a22;border-radius:14px;padding:5px 14px"><i class="ti ti-home" style="font-size:21px;color:#5DCAA5"></i><span style="font-size:11px;color:#5DCAA5;font-weight:600">Beranda</span></div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><i class="ti ti-building" style="font-size:21px;color:#7a7972"></i><span style="font-size:11px;color:#7a7972">Kontrakan</span></div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><i class="ti ti-bell" style="font-size:21px;color:#7a7972"></i><span style="font-size:11px;color:#7a7972">Reminder</span></div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><i class="ti ti-user" style="font-size:21px;color:#7a7972"></i><span style="font-size:11px;color:#7a7972">Profil</span></div>
+</div>
+</div>
+</div>
+
+<div class="col">
+<p class="label">3. Detail kontrakan</p>
+<div class="phone" style="background:#ffffff">
+<div style="position:relative;height:150px;background:#9FE1CB">
+  <div style="position:absolute;top:14px;left:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center"><i class="ti ti-arrow-left" style="font-size:18px;color:#04342C"></i></div>
+  <div style="position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center"><i class="ti ti-edit" style="font-size:17px;color:#04342C"></i></div>
+</div>
+<div style="padding:16px">
+  <p style="font-size:20px;font-weight:600;color:#262622;margin:0">Kontrakan melati</p>
+  <div style="display:flex;align-items:center;gap:6px;margin-top:6px"><i class="ti ti-map-pin" style="font-size:16px;color:#6b6a63"></i><p style="font-size:13px;color:#6b6a63;margin:0">Jl. mawar no. 5, bogor</p></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:20px 0 12px">
+    <p style="font-size:16px;font-weight:600;color:#262622;margin:0">Unit (4)</p>
+    <div style="display:flex;align-items:center;gap:4px;color:#0F6E56"><i class="ti ti-plus" style="font-size:16px"></i><span style="font-size:13px;font-weight:600">Tambah unit</span></div>
+  </div>
+  <div style="background:#fff;border:0.5px solid #e5e3da;border-radius:16px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center">
+    <div><p style="font-size:15px;font-weight:600;color:#262622;margin:0">Kamar 1</p><p style="font-size:13px;color:#6b6a63;margin:3px 0 0">Pak joko - Rp 800rb/bln</p></div>
+    <div style="background:#EAF3DE;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:600;color:#27500A">Terisi</div>
+  </div>
+  <div style="background:#fff;border:0.5px solid #e5e3da;border-radius:16px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center">
+    <div><p style="font-size:15px;font-weight:600;color:#262622;margin:0">Kamar 2</p><p style="font-size:13px;color:#6b6a63;margin:3px 0 0">Bu sari - jatuh tempo 3 hari</p></div>
+    <div style="background:#FAEEDA;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:600;color:#854F0B">Segera bayar</div>
+  </div>
+  <div style="background:#fff;border:0.5px solid #e5e3da;border-radius:16px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center">
+    <div><p style="font-size:15px;font-weight:600;color:#262622;margin:0">Kamar 3</p><p style="font-size:13px;color:#6b6a63;margin:3px 0 0">Belum ada penyewa</p></div>
+    <div style="background:#f1efe8;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:600;color:#5f5e5a">Kosong</div>
+  </div>
+  <div style="background:#fff;border:0.5px solid #e5e3da;border-radius:16px;padding:12px;display:flex;justify-content:space-between;align-items:center">
+    <div><p style="font-size:15px;font-weight:600;color:#262622;margin:0">Kamar 4</p><p style="font-size:13px;color:#6b6a63;margin:3px 0 0">Pak agus - Rp 750rb/bln</p></div>
+    <div style="background:#EAF3DE;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:600;color:#27500A">Terisi</div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="col">
+<p class="label">4. Tambah kontrakan</p>
+<div class="phone" style="background:#ffffff">
+<div style="display:flex;align-items:center;gap:12px;padding:16px;border-bottom:0.5px solid #e5e3da">
+  <i class="ti ti-arrow-left" style="font-size:20px;color:#262622"></i><p style="font-size:17px;font-weight:600;color:#262622;margin:0">Tambah kontrakan</p>
+</div>
+<div style="padding:16px">
+  <p style="font-size:14px;font-weight:600;color:#262622;margin:0 0 8px">Foto kontrakan</p>
+  <div style="display:flex;gap:8px;margin-bottom:20px">
+    <div style="width:64px;height:64px;border-radius:12px;background:#CECBF6"></div>
+    <div style="width:64px;height:64px;border-radius:12px;background:#F4C0D1"></div>
+    <div style="width:64px;height:64px;border-radius:12px;border:1.5px dashed #c9c7bc;display:flex;align-items:center;justify-content:center"><i class="ti ti-plus" style="font-size:22px;color:#a8a69c"></i></div>
+  </div>
+  <p style="font-size:14px;font-weight:600;color:#262622;margin:0 0 8px">Nama kontrakan</p>
+  <div style="border:0.5px solid #d3d1c7;border-radius:12px;padding:12px 14px;margin-bottom:18px"><p style="font-size:15px;color:#262622;margin:0">Kontrakan melati</p></div>
+  <p style="font-size:14px;font-weight:600;color:#262622;margin:0 0 8px">Alamat</p>
+  <div style="border:0.5px solid #d3d1c7;border-radius:12px;padding:12px 14px;margin-bottom:18px;min-height:44px"><p style="font-size:15px;color:#a8a69c;margin:0">Jl. mawar no. 5, bogor</p></div>
+  <p style="font-size:14px;font-weight:600;color:#262622;margin:0 0 8px">Lokasi</p>
+  <div style="border:0.5px solid #d3d1c7;border-radius:12px;padding:14px;margin-bottom:24px;display:flex;align-items:center;gap:10px">
+    <div style="width:32px;height:32px;border-radius:8px;background:#E1F5EE;display:flex;align-items:center;justify-content:center"><i class="ti ti-map-pin" style="font-size:17px;color:#085041"></i></div>
+    <p style="font-size:14px;color:#0F6E56;font-weight:600;margin:0">Pilih lokasi di peta</p>
+  </div>
+  <div style="background:#085041;border-radius:14px;padding:15px;text-align:center"><p style="font-size:16px;font-weight:600;color:#fff;margin:0">Simpan kontrakan</p></div>
+</div>
+</div>
+</div>
+
+<div class="col">
+<p class="label">5. Reminder</p>
+<div class="phone" style="background:#ffffff">
+<div style="padding:16px 16px 0">
+  <p style="font-size:20px;font-weight:600;color:#262622;margin:0 0 14px">Reminder</p>
+  <div style="display:flex;gap:8px;margin-bottom:18px">
+    <div style="background:#085041;border-radius:20px;padding:6px 14px;font-size:13px;font-weight:600;color:#fff">Semua</div>
+    <div style="background:#f1efe8;border-radius:20px;padding:6px 14px;font-size:13px;color:#5f5e5a">Sewa</div>
+    <div style="background:#f1efe8;border-radius:20px;padding:6px 14px;font-size:13px;color:#5f5e5a">Kontrak</div>
+  </div>
+  <p style="font-size:13px;font-weight:600;color:#a8a69c;margin:0 0 10px">Hari ini</p>
+  <div style="background:#fff;border:0.5px solid #f2ddd3;border-left:4px solid #D85A30;border-radius:4px 16px 16px 4px;padding:13px;margin-bottom:16px;display:flex;gap:12px;align-items:center">
+    <div style="width:22px;height:22px;border-radius:50%;border:1.5px solid #D85A30"></div>
+    <div><p style="font-size:15px;font-weight:600;color:#262622;margin:0">Kontrak habis - kamar 1 anggrek</p><p style="font-size:12px;color:#993C1D;margin:3px 0 0">Hari ini</p></div>
+  </div>
+  <p style="font-size:13px;font-weight:600;color:#a8a69c;margin:0 0 10px">Minggu ini</p>
+  <div style="background:#fff;border:0.5px solid #f0e2c0;border-left:4px solid #EF9F27;border-radius:4px 16px 16px 4px;padding:13px;margin-bottom:10px;display:flex;gap:12px;align-items:center">
+    <div style="width:22px;height:22px;border-radius:50%;border:1.5px solid #EF9F27"></div>
+    <div><p style="font-size:15px;font-weight:600;color:#262622;margin:0">Sewa jatuh tempo - kamar 2 melati</p><p style="font-size:12px;color:#854F0B;margin:3px 0 0">3 hari lagi</p></div>
+  </div>
+  <div style="background:#fff;border:0.5px solid #e5e3da;border-left:4px solid #B4B2A9;border-radius:4px 16px 16px 4px;padding:13px;margin-bottom:16px;display:flex;gap:12px;align-items:center">
+    <div style="width:22px;height:22px;border-radius:50%;border:1.5px solid #B4B2A9"></div>
+    <div><p style="font-size:15px;font-weight:600;color:#262622;margin:0">Cek AC - kamar 4 melati</p><p style="font-size:12px;color:#6b6a63;margin:3px 0 0">5 hari lagi</p></div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="col">
+<p class="label">6. Profil</p>
+<div class="phone" style="background:#ffffff">
+<div style="padding:24px 16px;text-align:center;border-bottom:0.5px solid #e5e3da">
+  <div style="width:72px;height:72px;border-radius:50%;background:#FAC775;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:600;color:#412402;margin:0 auto 10px">PB</div>
+  <p style="font-size:18px;font-weight:600;color:#262622;margin:0">Pak Budi</p><p style="font-size:13px;color:#6b6a63;margin:3px 0 0">budi@email.com</p>
+</div>
+<div style="padding:16px">
+  <p style="font-size:13px;font-weight:600;color:#a8a69c;margin:0 0 8px">Tampilan</p>
+  <div style="border:0.5px solid #e5e3da;border-radius:16px;padding:6px;margin-bottom:20px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 8px">
+      <div style="display:flex;align-items:center;gap:12px"><i class="ti ti-sun" style="font-size:19px;color:#5f5e5a"></i><span style="font-size:15px;color:#262622">Tema</span></div>
+      <div style="display:flex;background:#f1efe8;border-radius:20px;padding:3px">
+        <div style="background:#085041;border-radius:16px;padding:5px 11px;font-size:12px;font-weight:600;color:#fff">Otomatis</div>
+        <div style="padding:5px 11px;font-size:12px;color:#6b6a63">Terang</div>
+        <div style="padding:5px 11px;font-size:12px;color:#6b6a63">Gelap</div>
+      </div>
+    </div>
+  </div>
+  <div style="border:0.5px solid #e5e3da;border-radius:16px;overflow:hidden;margin-bottom:20px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;border-bottom:0.5px solid #e5e3da">
+      <div style="display:flex;align-items:center;gap:12px"><i class="ti ti-bell" style="font-size:19px;color:#5f5e5a"></i><span style="font-size:15px;color:#262622">Notifikasi</span></div>
+      <i class="ti ti-chevron-right" style="font-size:17px;color:#a8a69c"></i>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px">
+      <div style="display:flex;align-items:center;gap:12px"><i class="ti ti-help-circle" style="font-size:19px;color:#5f5e5a"></i><span style="font-size:15px;color:#262622">Bantuan</span></div>
+      <i class="ti ti-chevron-right" style="font-size:17px;color:#a8a69c"></i>
+    </div>
+  </div>
+  <div style="border:0.5px solid #f2ddd3;border-radius:16px;padding:14px;display:flex;align-items:center;gap:12px"><i class="ti ti-logout" style="font-size:19px;color:#993C1D"></i><span style="font-size:15px;color:#993C1D;font-weight:600">Keluar</span></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# --- web framework ---
+fastapi>=0.115,<0.116
+uvicorn[standard]>=0.34,<0.35
+
+# --- database ---
+sqlalchemy>=2.0.36,<2.1
+psycopg[binary]>=3.2,<3.3      # driver PostgreSQL (psycopg v3)
+alembic>=1.14,<1.15            # migrasi skema database
+
+# --- konfigurasi & validasi ---
+pydantic>=2.10,<3
+pydantic-settings>=2.7,<3
+email-validator>=2.2,<3        # validasi format email di schema
+
+# --- auth ---
+bcrypt>=4.2,<5                 # hash password
+pyjwt>=2.10,<3                 # bikin & verifikasi token JWT
+python-multipart>=0.0.20       # baca form-data (login form & upload file)
+
+# --- penjadwalan ---
+apscheduler>=3.10,<4           # cron harian: segarkan reminder otomatis
+
+# --- test (opsional, dipakai folder tests/) ---
+pytest>=8.3,<9
+httpx>=0.28,<1

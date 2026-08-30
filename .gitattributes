@@ -1,0 +1,19 @@
+# Normalkan line ending ke LF di repo (penting: backend jalan di Linux/Railway).
+* text=auto eol=lf
+
+# File Windows tetap CRLF
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+
+# Biner — jangan diutak-atik
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.jar   binary
+*.keystore binary
+*.jks   binary
+*.otf   binary
+*.ttf   binary

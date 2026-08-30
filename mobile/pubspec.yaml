@@ -1,0 +1,42 @@
+name: kontraku
+description: "Aplikasi reminder & manajemen kontrakan"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # --- jaringan ---
+  dio: ^5.7.0                 # HTTP client + interceptor (menyisipkan token JWT otomatis)
+
+  # --- state management ---
+  provider: ^6.1.2            # pola ChangeNotifier: paling sederhana untuk dipelajari
+
+  # --- penyimpanan lokal ---
+  shared_preferences: ^2.3.3  # simpan token login & pilihan tema
+
+  # --- notifikasi (dijadwalkan di HP, tanpa server / Firebase) ---
+  flutter_local_notifications: ^19.4.2
+  timezone: ^0.10.1
+  flutter_timezone: ^4.1.1
+  app_settings: ^6.1.1        # buka halaman pengaturan sistem kalau izin ditolak
+
+  # --- utilitas ---
+  intl: ^0.20.2               # format tanggal & angka (locale Indonesia)
+  image_picker: ^1.1.2        # ambil foto dari galeri/kamera (form tambah kontrakan)
+  cached_network_image: ^3.4.1
+  collection: ^1.19.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

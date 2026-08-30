@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  DEV ONLY. Mengizinkan HTTP (tanpa TLS) ke alamat backend lokal:
+  - localhost / 127.0.0.1  -> lewat `adb reverse tcp:8000 tcp:8000` (HP via USB)
+  - 10.0.2.2               -> Android Emulator menunjuk ke PC
+  - 192.168.100.55         -> HP di Wi-Fi sama, IP LAN PC (ganti kalau IP berubah)
+
+  Domain lain tetap wajib HTTPS. Saat backend sudah di Railway (HTTPS), hapus
+  file ini + atribut android:networkSecurityConfig di AndroidManifest.
+-->
+<network-security-config>
+    <!-- DEV: izinkan semua HTTP polos karena IP backend lokal bisa berubah
+         (DHCP). Alamat backend diatur dari dalam app (Pengaturan server). -->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

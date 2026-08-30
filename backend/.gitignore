@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.env
+*.sqlite3
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+
+# file upload lokal (mode STORAGE_BACKEND=local)
+var/
+secrets/
