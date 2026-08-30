@@ -111,10 +111,15 @@ Diatur lewat `.env`. Saat lokal semua pakai mode tiruan:
 
 ## Deploy ke Railway
 
+**Sudah live:** <https://backend-production-675a5.up.railway.app> (`/health`, `/docs`).
+Project `kontraku` → service `backend` (auto-deploy dari GitHub `main`, watch
+`backend/**`) + `Postgres` + volume `kontraku-uploads` di `/app/var`.
+Redeploy otomatis tiap push yang menyentuh `backend/`.
+
 File yang dipakai: `Dockerfile`, `start.sh` (migrasi + uvicorn), `railway.json`,
 `.dockerignore`.
 
-**Langkah:**
+**Langkah (kalau setup dari awal lagi):**
 1. Railway → New Project → **Deploy from GitHub repo** → pilih `Argy1/Kontraku`.
 2. Di service yang dibuat → **Settings → Root Directory** = `backend`
    (Railway otomatis pakai `backend/Dockerfile`).
