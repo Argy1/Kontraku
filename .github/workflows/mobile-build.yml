@@ -1,0 +1,64 @@
+name: Mobile build
+
+on:
+  push:
+    branches: [main]
+    paths: ["mobile/**", ".github/workflows/mobile-build.yml"]
+  workflow_dispatch:
+
+# Build artefak yang bisa dipasang. iOS TIDAK bisa signed di CI publik
+# (butuh sertifikat Apple Developer) — .ipa yang dihasilkan unsigned,
+# jadi untuk dipasang lewat Xcode / sideload, bukan langsung App Store.
+
+jobs:
+  android:
+    name: Android APK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kontraku-android-apk
+          path: mobile/build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
+
+  ios:
+    name: iOS (unsigned .ipa)
+    runs-on: macos-14
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build ios --release --no-codesign
+      - name: Package unsigned .ipa
+        run: |
+          set -e
+          APP_PATH="build/ios/iphoneos/Runner.app"
+          mkdir -p build/ios/ipa/Payload
+          cp -R "$APP_PATH" build/ios/ipa/Payload/
+          cd build/ios/ipa
+          zip -qr Kontraku-unsigned.ipa Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kontraku-ios-ipa-unsigned
+          path: mobile/build/ios/ipa/Kontraku-unsigned.ipa
+          if-no-files-found: error
