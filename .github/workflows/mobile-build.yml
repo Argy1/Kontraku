@@ -48,7 +48,23 @@ jobs:
           channel: stable
           cache: true
       - run: flutter pub get
-      - run: flutter build ios --release --no-codesign
+      - name: flutter build ios
+        run: |
+          set -o pipefail
+          flutter build ios --release --no-codesign 2>&1 | tee /tmp/iosbuild.log
+      - name: Build log tail (on failure)
+        if: failure()
+        run: |
+          {
+            echo '### iOS build failed — last 120 lines'
+            echo '```'
+            tail -n 120 /tmp/iosbuild.log || true
+            echo '```'
+            echo '### Podfile.lock (if generated)'
+            echo '```'
+            cat ios/Podfile.lock 2>/dev/null | head -n 80 || echo '(none)'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
       - name: Package unsigned .ipa
         run: |
           set -e
