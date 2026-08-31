@@ -1,0 +1,306 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Tema "Hangat & Jelas" — mengikuti design-reference.html.
+  Warna dasar: teal #0b5142, krem #f2f0e9, aksen amber + koral.
+  Semua warna didefinisikan di :root / .dark, lalu dipetakan ke token
+  Tailwind di blok @theme inline supaya bisa dipakai sebagai utility
+  (bg-primary, text-rent-ink, dsb).
+*/
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-heading:
+    var(--font-fraunces), ui-serif, "Iowan Old Style", Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", monospace;
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Warna brand tetap (tidak ikut ganti saat dark mode) */
+  --color-brand-teal: #0b5142;
+  --color-brand-teal-deep: #073a2f;
+  --color-brand-teal-bright: #1d9e75;
+  --color-brand-cream: #f2f0e9;
+  --color-brand-amber: #f6c667;
+  --color-brand-amber-deep: #e0982a;
+  --color-brand-coral: #d9613c;
+  --color-brand-plum: #4b3fa0;
+  --color-brand-rose: #a83c6a;
+
+  /* Nada per-jenis reminder (soft = latar, ink = teks) */
+  --color-rent: var(--tone-rent);
+  --color-rent-soft: var(--tone-rent-soft);
+  --color-rent-ink: var(--tone-rent-ink);
+  --color-contract: var(--tone-contract);
+  --color-contract-soft: var(--tone-contract-soft);
+  --color-contract-ink: var(--tone-contract-ink);
+  --color-maint: var(--tone-maint);
+  --color-maint-soft: var(--tone-maint-soft);
+  --color-maint-ink: var(--tone-maint-ink);
+  --color-utility: var(--tone-utility);
+  --color-utility-soft: var(--tone-utility-soft);
+  --color-utility-ink: var(--tone-utility-ink);
+  --color-success: var(--tone-utility);
+  --color-success-soft: var(--tone-utility-soft);
+  --color-success-ink: var(--tone-utility-ink);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 10px);
+  --radius-3xl: calc(var(--radius) + 18px);
+
+  --shadow-soft: 0 1px 2px rgb(11 81 66 / 0.04), 0 12px 32px -12px rgb(11 81 66 / 0.14);
+  --shadow-lift: 0 2px 4px rgb(11 81 66 / 0.05), 0 24px 48px -16px rgb(11 81 66 / 0.22);
+
+  --animate-rise: kt-rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-fade: kt-fade 0.4s ease both;
+}
+
+:root {
+  --radius: 0.9rem;
+
+  --background: #f2f0e9;
+  --foreground: #23221e;
+  --card: #fbfaf5;
+  --card-foreground: #23221e;
+  --popover: #fbfaf5;
+  --popover-foreground: #23221e;
+
+  --primary: #0b5142;
+  --primary-foreground: #f4f1e8;
+  --secondary: #e6efe9;
+  --secondary-foreground: #0b4638;
+  --muted: #eae7db;
+  --muted-foreground: #6f6c60;
+  --accent: #f4e3c6;
+  --accent-foreground: #5c4108;
+  --destructive: #c0492a;
+  --destructive-foreground: #fbf2ee;
+
+  --border: #e0dccd;
+  --input: #d5d0be;
+  --ring: #0b5142;
+
+  --chart-1: #0b5142;
+  --chart-2: #e0982a;
+  --chart-3: #d9613c;
+  --chart-4: #4b3fa0;
+  --chart-5: #1d9e75;
+
+  --sidebar: #0b5142;
+  --sidebar-foreground: #cfe4dc;
+  --sidebar-primary: #f6c667;
+  --sidebar-primary-foreground: #0a3f33;
+  --sidebar-accent: #0f6151;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #147059;
+  --sidebar-ring: #f6c667;
+
+  --tone-rent: #c98a1a;
+  --tone-rent-soft: #f6e7c8;
+  --tone-rent-ink: #7a5209;
+  --tone-contract: #d9613c;
+  --tone-contract-soft: #f6ddd0;
+  --tone-contract-ink: #8f3316;
+  --tone-maint: #5b53b0;
+  --tone-maint-soft: #e4e2f5;
+  --tone-maint-ink: #3a3486;
+  --tone-utility: #0f7a63;
+  --tone-utility-soft: #d9ebe4;
+  --tone-utility-ink: #0a4538;
+}
+
+.dark {
+  --background: #1a1a17;
+  --foreground: #ecebe3;
+  --card: #232320;
+  --card-foreground: #ecebe3;
+  --popover: #232320;
+  --popover-foreground: #ecebe3;
+
+  --primary: #4fb89b;
+  --primary-foreground: #04241d;
+  --secondary: #223b34;
+  --secondary-foreground: #a9ddce;
+  --muted: #2a2a25;
+  --muted-foreground: #a1a094;
+  --accent: #3a3222;
+  --accent-foreground: #f2d9a8;
+  --destructive: #e8785a;
+  --destructive-foreground: #241009;
+
+  --border: #35342d;
+  --input: #3b3a32;
+  --ring: #4fb89b;
+
+  --chart-1: #4fb89b;
+  --chart-2: #e8b866;
+  --chart-3: #e8785a;
+  --chart-4: #9a92e0;
+  --chart-5: #1d9e75;
+
+  --sidebar: #0c2b24;
+  --sidebar-foreground: #a9c9c0;
+  --sidebar-primary: #f6c667;
+  --sidebar-primary-foreground: #0a3f33;
+  --sidebar-accent: #123f34;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #123f34;
+  --sidebar-ring: #f6c667;
+
+  --tone-rent: #e8b866;
+  --tone-rent-soft: #38301a;
+  --tone-rent-ink: #f2d9a8;
+  --tone-contract: #e8785a;
+  --tone-contract-soft: #3a231b;
+  --tone-contract-ink: #f3c9ba;
+  --tone-maint: #9a92e0;
+  --tone-maint-soft: #26233f;
+  --tone-maint-ink: #c9c5f0;
+  --tone-utility: #4fb89b;
+  --tone-utility-soft: #17352d;
+  --tone-utility-ink: #a9ddce;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv05";
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading;
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--brand-teal, #0b5142) 22%, transparent);
+  }
+
+  /* Scrollbar hangat, tipis */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+}
+
+/* Butiran kertas halus di seluruh halaman */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.dark .grain::before {
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+}
+
+@keyframes kt-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes kt-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes kt-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@utility rise-* {
+  animation: kt-rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(--value(integer) * 60ms);
+}
